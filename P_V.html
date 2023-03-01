@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur pdf </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<style>*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background-color: #18f;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    color: #000;
+}
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #000;
+}
+form{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+
+}
+form label{
+    font-size: 20px;
+    color: #000;
+
+}
+form input{
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    outline: 0;
+    border: 0;
+
+}
+.submit{
+    margin-top: 20px;
+    color: #fff;
+    background-color: #18f;
+    border: solid 2px #fff;
+    border-radius: 6px;
+}
+.submit:hover{
+    background-color: #fff;
+    color: #18f;
+}
+/*pdf*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.piece{
+background-color: #fff;
+height: 600px;
+width: 800px;
+position: relative;
+}
+.logo{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top:50px ;
+}
+.logo img{
+width: 50px;
+border-radius: 50%;
+
+}
+.logo P{
+margin-left: 20px;
+font-weight: bold;
+}
+h1{
+text-align: center;
+margin: 25px 0;
+
+}
+.elements{
+margin-left: 25px;
+}
+.elements p{
+margin: 25px 0;
+font-size:20px;
+}
+.certificat{
+position:absolute;
+right: 20px;
+text-align: center;
+}
+.certificat img{
+width: 35px;
+border-radius: 50%;
+}
+.certificat p{ 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 35px;
+
+}
+body{
+background-color: #18f;
+width: 100%;
+min-height: 100vh;
+align-items: center;
+display: flex;
+justify-content:center;
+flex-direction: column;
+
+}
+.generteur-btn{
+display: flex;
+}
+.generteur-btn button,.generteur-btn a{
+padding:10px 30px;
+text-decoration: none;
+text-align: center;
+margin-left: 20px;
+
+}
+    /* img{
+        width: 100px;
+        height: 100px;
+        box-shadow: 8px 8px 8px 8px purple;
+        margin-bottom: 5%;
+        
+    } */
+.formulaire img{
+    display: flex;
+    justify-content: end    ;
+}
+
+</style>
+
+<body>
+    <div class="formulaire">
+        <img src="images/logoOficielle.PNG" alt="" align="left" width="100" height="100">
+        <h2>LE PROCES VERBALE EN PDF DE:</h2>
+        <form action="#">
+            <label for="">Nom</label>
+            <input type="text" placeholder="........" class="form-nom">
+            <label for="Prénom">Prénom</label>
+            <input type="text" placeholder="........" class="form-prenom">
+            <label for="Age">pôle</label>
+            <input type="text" placeholder="Ex: 19" class="pôle">
+            <label for="Gmail">filière</label>
+            <input type="text" placeholder="DES103 / AUX101 ....." class="filière">
+            <label for="Adress">Date</label>
+            <input type="date" placeholder="Ex: Florida 52 b " class="Date">
+            <input type="submit" class="submit" onclick="afficherPDF()">
+        </form>
+    </div>
+    <script >
+        //insertions des elements dans le pdf
+  function afficherPDF(){
+    // les variables
+var form_nom =document.querySelector('.form-nom').value;
+
+var form_prenom =document.querySelector('.form-prenom').value;
+var pôle =document.querySelector('.pôle').value;
+var filière =document.querySelector('.filière').value;
+var Date =document.querySelector('.Date').value;
+var body =document.querySelector('body');
+// insertion 
+body.innerHTML=` 
+
+    <div class="piece">
+        <div class="logo">
+            <img src="images/l.PNG" alt="">
+            <p id="li">Le procès verbale d'abscence </p>
+        </div>
+        <h1></h1>
+        <div class="elements">
+            <p>Nom: <strong>${form_nom}</strong></p>
+            <p>prenom: <strong>${form_prenom}</strong></p>
+            <p>pôle: <strong>${pôle}</strong></p>
+            <p>filière: <strong>${filière}</strong></p>
+            <p align='center'>Date: Le <strong>${Date}</strong></p>
+            <div class="certificat">
+                <img src="images/logo1.PNG" alt="">
+                <p id="l">signature</p>
+                <p id="l">................</p>
+                
+            </div>
+            <style>
+            @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+            #l,#li{
+                font-family: 'Tangerine', cursive;
+            }
+            </style>
+        </div>
+     
+    </div>
+    <div class="generteur-btn">
+        <button class="'submit" onclick="generateur()">Télécharger le pdf</button>
+        <a href="P_V.html" class="submit">Généerer un autre pdf</a>
+    </div>
+   
+`//NB ce sign est différent de ceci('')
+
+}
+function generateur(){
+    const piece= document.querySelector('.piece')
+    html2pdf()
+    .from(piece)
+    .save()
+
+}
+
+
+    </script>
+</body>
+</html>

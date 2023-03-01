@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<STYLE>
+       *{
+    margin: 0;
+    padding: 0;
+    background-origin: border-box;
+    
+}
+:root{
+    --color:#fff;
+
+}
+.name {
+    font-size: 18px;
+  }
+  
+.found {
+    color: red;
+    font-weight: bold;
+  }
+  .main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+ 
+    /* background: linear-gradient(to right,rgb(241, 241, 10),rgb(15, 229, 29),rgb(15, 101, 229)); */
+
+  }   
+  div ul{
+    display: flex;
+    justify-content: space-between;
+  }
+  div ul li{
+    list-style-type: none;
+  }
+  span{
+    color: orangered;
+  } 
+  body {
+			font-family: Arial, sans-serif;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 8px;
+			text-align: center;
+		}
+		th {
+			background-color: #333;
+			color: white;
+			font-weight: bold;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		tr:hover {
+			background-color: #ddd;
+		}
+		.col1 {
+			width: 30%;
+		}
+		.col2 {
+			width: 40%;
+		}
+		.col3 {
+			width: 30%;
+		}
+		.absent {
+			background-color: red;
+			color: white;
+		}
+	</style>  
+
+</STYLE>
+<body>
+    <div class="main">
+        <ul>
+            <li><img src="images/logo1.PNG" title="logo" width="60" height="60"></li>
+            <li><h1 id="strict">Application de gestion d'<span>Abscence</span></h1></li>
+            <li> 
+                <div class="search-box" id="search">
+                    <input type="text" placeholder="Rechercher par groupe" onkeyup="searchStudents()">
+                </div>
+            </li>
+        </ul>
+        <h1>Tableau d'absences</h1>
+	<table>
+		<thead>
+			<tr>
+				<th class="col1">Profil</th>
+				<th class="col2">Nom complet</th>
+				<th class="col3">Absent</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Profil 1</td>
+				<td>Nom complet 1</td>
+				<td class="absent">X</td>
+			</tr>
+			<tr>
+				<td>Profil 2</td>
+				<td>Nom complet 2</td>
+				<td></td>
+			</tr>
+			<!-- Ajouter ici les 18 autres étudiants -->
+		</tbody>
+	</table>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de gestion d'absence</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    *{
+        background-color: antiquewhite;
+    }
+    button{
+        width: 150px;
+        
+    }
+</style>
+</head>
+<body>
+    <a href="Gestio_Abscence.html"><button>home</button></a>
+<div class="container mt-5">
+    <h1 class="text-center">Tableau de gestion d'absence</h1>
+    <div class="search-box" >
+        <input type="text" placeholder="Chercher par groupe...." onkeyup="searchStudents()">
+        </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Nom complet</th>
+                        <th>Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 1</td>
+                        <td class="name">ahmed nasri</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 2</td>
+                        <td class="name">khalid jaouli</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 3</td>
+                        <td class="name"> fatima tams</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 4</td>
+                        <td class="name">jaouhara nawra</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 5</td>
+                        <td class="name">zoubida tab</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 6</td>
+                        <td class="name">manal khaly</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 7</td>
+                        <td class="name">jawd minou</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 8</td>
+                        <td class=".name">yassine yassine</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 9</td>
+                        <td class="name">ahem nacri</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 10</td>
+                        <td class="name">fahd dasl</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 11</td>
+                        <td class="name">farid jawr</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 12</td>
+                        <td class="name">ilham talr</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 13</td>
+                        <td class="name">souhail nabr</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 14</td>
+                        <td class="name">mohammed riza</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 15</td>
+                        <td class="name">reda nayl</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 16</td>
+                        <td>hajar jayv</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 17</td>
+                        <td class="name">badr narjh</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 18</td>
+                        <td class="name">rayan jkhfk</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="profile.html">Profile </a> 19</td>
+                        <td class="name">mouad ruygkfb</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="profile.html">Profile </a> 20</td>
+                        <td class="name">khadija hkj</td>
+                        <td><input type="checkbox" name="absent[]"></td>
+                    </tr>
+                   
+                    <!-- Ajouter les autres étudiants ici -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Fenêtre modale pour la date d'absence -->
+<div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="dateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dateModalLabel">Date d'absence</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="absenceDate">Sélectionner la date d'absence:</label>
+                        <input type="date" class="form-control" id="absenceDate" name="absenceDate" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary" id="nextStepBtn">Suivant</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fenêtre modale pour l'heure d'absence -->
+<div class="modal fade" id="timeModal" tabindex="-1" role="dialog" aria-labelledby="timeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="timeModalLabel">Heure d'absence</h5>
+                <button type="button" class="btn btn-primary" id="submitBtn">Soumettre</button>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            </div>
+            <!-- Fenêtre modale pour l'enregistrement de l'absence -->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmationModalLabel">Confirmation d'absence</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="confirmationMessage"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <style>
+                .name {
+              font-size: 18px;
+            }
+            
+            .found {
+              color: red;
+              font-weight: bold;
+            }
+            .fullname{
+                font-size: 40px;
+                color: red;
+            }
+            
+            </style>    
+            <script>
+                 function searchStudents() {
+    var input = document.querySelector('.search-box input ');
+    var filter = input.value.toUpperCase();
+    var names = document.querySelectorAll('.name');
+    for (var i = 0; i < names.length; i++) {
+      var name = names[i].textContent.toUpperCase();
+      if (filter && name.indexOf(filter) > -1) {
+        names[i].classList.add('found');
+      } else {
+        names[i].classList.remove('found');
+      }
+    }
+  }
+            $(document).ready(function() {
+                // Initialisation des variables globales
+                var selectedRow = null;
+                var selectedDate = null;
+                var selectedTime = null;
+            
+                // Afficher la fenêtre modale pour la sélection de la date
+                $("input[name='absent[]']").click(function() {
+                    selectedRow = $(this).closest("tr");
+                    $("#dateModal").modal("show");
+                });
+            
+                // Afficher la fenêtre modale pour la sélection de l'heure
+                $("#nextStepBtn").click(function() {
+                    selectedDate = $("#absenceDate").val();
+                    if (selectedDate !== "") {
+                        $("#dateModal").modal("hide");
+                        $("#timeModal").modal("show");
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erreur",
+                            text: "Veuillez sélectionner une date d'absence."
+                        });
+                    }
+                });
+            
+                // Soumettre le formulaire et enregistrer l'absence
+                $("#submitBtn").click(function() {
+                    selectedTime = $("#absenceTime").val();
+                    if (selectedTime !== "") {
+                        var fullName = selectedRow.find("td:eq(1)").text();
+                        var absenceDateTime = selectedDate ;
+                        var absenceHours = prompt("Entrez le nombre d'heures d'absence pour " + fullName);
+                        if (absenceHours !== null) {
+                            var confirmationMessage = "Absence enregistrée pour :  " + fullName.toUpperCase() + " le " + absenceDateTime + "\n Nombre d'heures d'absence: " + absenceHours+"h";
+                            $("#confirmationMessage").text(confirmationMessage);
+                            $("#timeModal").modal("hide");
+                            $("#confirmationModal").modal("show");
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erreur",
+                            text: "Veuillez sélectionner une heure d'absence."
+                        });
+                    }
+                });
+            });
+             // Fermer la fenêtre modale pour la sélection de l'heure
+             $("#timeModal").modal("hide");
+        
+        // Afficher la fenêtre modale de confirmation
+        $("#confirmationModalLabel").text("Confirmation d'absence");
+        $("#confirmationMessage").text("L'étudiant " + selectedRow.find("td:eq(1)").text() + " sera absent le " + selectedDate + " à " + selectedTime + ".");
+        $("#confirmationModal").modal("show");
+
+        // Remettre à zéro les variables globales
+        selectedRow = null;
+        selectedDate = null;
+        selectedTime = null;
+        let searchValue = document.querySelector('.search-box input').value;
+let row = document.querySelector(`tr#${searchValue.toLowerCase().replace(' ', '-')}`);
+if (row) {
+  row.scrollIntoView({behavior: "smooth"});
+}
+
+
+       
+            </script>
+            </body>
+            </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" placeholder="Rechercher un étudiant...img" onkeyup="searchStudents()">
+       
+      </div>
+      
+      <ul class="student-list">
+        <li><span class="name">jean Dupont</span></li>
+        <li><span class="name">Marie Martin</span></li>
+        <li><span class="name">yassine sadqi</span></li>
+        <li><span class="name">Pierre Durand</span></li>
+        <li><span class="name">Pierre Durand</span></li>
+        <li><span class="name">Pierre Durand</span></li>
+        <li><span class="name">Pierre Durand</span></li>
+        <!-- Ajoutez les autres noms d'étudiants ici -->
+      </ul>
+<style>
+    .name {
+  font-size: 18px;
+}
+
+.found {
+  color: red;
+  font-weight: bold;
+}
+
+</style>    
+<script>
+    function searchStudents() {
+  var input = document.querySelector('.search-box input');
+  var filter = input.value.toUpperCase();
+  var names = document.querySelectorAll('.name');
+  for (var i = 0; i < names.length; i++) {
+    var name = names[i].textContent.toUpperCase();
+    if (filter && name.indexOf(filter) > -1) {
+      names[i].classList.add('found');
+    } else {
+      names[i].classList.remove('found');
+    }
+  }
+}
+
+
+</script>  
+</body>
+</html>

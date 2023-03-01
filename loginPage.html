@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+
+
+</head>
+<style>
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 2px 2px #1c1d2c;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    
+}
+ span{
+    color: rgb(17, 138, 132);
+   
+}
+h2{
+    margin-top: 1rem;
+    font-size: 30px;
+   
+}
+
+#loginlogo{
+   height: 100px;
+   width: 100px;
+   background: url(images/logoOficielle.PNG)center/cover ;; 
+   border-radius: 10%;
+   
+   margin-top: 0rem;
+   margin-left: 25rem;
+   box-shadow: 0 15px 10px rgba(248,249,247,0.5);
+   border: 1px solid #ddd;
+ 
+}
+
+.login-container{
+    position: relative;
+    width: 900px;
+    margin: 0vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    border: none;
+}
+.Login-Title{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.sub-title{
+    font-weight: 400;
+    text-shadow: none;
+    margin-top: 2rem;
+   
+}
+#MainLogIn-form{
+    position: relative;
+    margin-top: 4rem;
+}
+*{
+    text-align: center;
+}
+ .login-container .Login-Title{
+    margin-bottom: -1rem;
+} 
+label{
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;     
+}
+/* .div{
+   
+    border:   rgb(17, 138, 132) solid 5px;
+    border-radius: 2%;
+    
+} */
+#MainLogIn-form input{
+    background-color: rgb(17, 138, 132);
+    color: #000;
+    /* border-radius: 5px; */
+    padding: 0.5rem;
+    letter-spacing: 2.1px;
+}
+#MainLogIn-form input:hover{
+    background-color: transparent;
+}
+#MainLogIn-form .input-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem; 
+}
+#hi{
+    font-size: 30px;
+    font-weight: bolder;
+   
+}
+button{
+    background-color:rgb(17, 138, 132) ;
+    width: 150px;
+    font-weight: bolder;
+    border-radius: 15px;
+    height: 25px;
+
+}
+button:hover{
+    background-color: #fff;
+    color: rgb(17, 138, 132);
+  
+}
+.off{
+background-color:black;
+color: #fff;
+}
+.on{
+    background-color: #fff;
+}
+#submitLoginForm{
+    margin-top: 2rem;
+    margin-bottom:2rem ;
+}
+#hello{
+    text-decoration: underline double  rgb(17, 138, 132);
+}
+#toggle{
+    display: flex;
+    justify-content: center;
+    
+}  */
+dialog {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			border: 1px solid black;
+			background-color: white;
+			z-index: 1;
+		}
+        .success-message {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: green;
+			margin-bottom: 20px;
+		}
+        .checkmark {
+			display: inline-block;
+			stroke-width: 2px;
+			stroke: green;
+			fill: none;
+			margin-right: 10px;
+		}
+
+		.checkmark-circle {
+			stroke-dasharray: 166;
+			stroke-dashoffset: 166;
+			animation: dash 1.5s ease-in-out forwards;
+		}
+
+		.checkmark-stem {
+			animation: stem 0.3s ease-in-out 0.75s forwards;
+		}
+
+		.checkmark-kick {
+			animation: kick 0.3s ease-in-out 0.9s forwards;
+		}
+        @keyframes dash {
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		@keyframes stem {
+			to {
+				stroke-dashoffset: -14;
+			}
+		}
+
+		@keyframes kick {
+			to {
+				stroke-dashoffset: -20;
+			}
+		}
+        #yassine{
+            margin-top: 2rem;
+            width: 150px;
+            border: solid 2px rgb(17, 138, 132);
+            height: 35px;
+            border-radius: 5%;
+            font-weight: bolder;
+           
+        }
+</style>
+<body>
+    <button id="toggle" >Off</button>
+    <div class="login-container">
+       
+        <h1 class="Login-Title">Bienvenue  à l'application d'absence <br>
+        <span>CMC</span> INSTITUT</h1>
+        <div class="div">
+        <h2 class="sub-title" id="hi">Please  <span id="hello">Log-in</span> </h2>
+        <a href="#"><div id="loginlogo"></div></a>
+        <form id="MainLogIn-form">
+            <div class="input-group">
+                <label for="username" class="main-text-c"> Identifiant <i class="fas fa-user"></i></label>
+                    
+                    <input 
+                    type="text"
+                     id="username" 
+                    placeholder="Taper votre identifiant...." 
+                    name="username">                
+            </div>
+            <div class="input-group">
+                <label for="password" class="main-text-c"> Password   <i class="fas fa-key"></i>  </label>
+                   
+                    <input 
+                    type="password"
+                     id="password" class="main-text-c" 
+                     name="password"
+                    placeholder="Taper votre password....">                
+            </div>
+          <input type="button" value="Accéder" onclick="submitForm()" id="yassine">
+        </form>
+    </div>
+    </div>
+    <script>
+        var toggleButton = document.getElementById('toggle');
+      var body = document.getElementsByTagName('body')[0];
+
+      toggleButton.addEventListener('click', function() {
+        if (body.classList.contains('off')) {
+          body.classList.remove('off');
+          body.classList.add('on');
+          toggleButton.innerText = 'On';
+        } else {
+            body.classList.remove('on');
+body.classList.add('off');
+toggleButton.innerText = 'Off';
+}
+});
+const mainlogform=document.getElementById('MainLogIn-form')
+const mainlogLogo=document.getElementById('loginlogo')
+mainlogLogo.addEventListener('click',function(){
+    mainlogform.classList.toggle("active");
+    mainlogLogo.classList.toggle('no-animation')
+
+})
+// Fonction appelée lorsque l'utilisateur clique sur le bouton "Accéder"
+function submitForm() {
+			// Récupération des valeurs des champs de formulaire
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			// Vérification des identifiants
+			if (username === "user" && password === "pass") {
+				// Si les identifiants sont corrects, affichage d'un message de succès et redirection vers la page home.html
+				showModalWithSuccessMessage();
+				setTimeout(function() {
+window.location.href = "Gestio_Abscence.html";
+action="Gestio_Abscence.html";
+}, 2000);
+} else {
+// Si les identifiants sont incorrects, affichage d'un message d'erreur
+alert("Identifiants incorrects");
+}
+}
+	// Fonction appelée pour afficher une fenêtre modale avec un message de succès
+	function showModalWithSuccessMessage() {
+		// Création de la fenêtre modale
+		var modal = document.createElement("dialog");
+		modal.setAttribute("id", "modal");
+
+		// Création du bouton de fermeture de la fenêtre modale
+		var closeButton = document.createElement("span");
+		closeButton.innerHTML = "&times;";
+		closeButton.setAttribute("class", "close-button");
+		closeButton.setAttribute("onclick", "closeModal()");
+
+		// Création du message de succès
+		var successMessage = document.createElement("div");
+		successMessage.setAttribute("class", "success-message");
+
+		// Création du symbole de validation
+		var checkmark = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+		checkmark.setAttribute("class", "checkmark");
+		checkmark.setAttribute("viewBox", "0 0 52 52");
+
+		var checkmarkCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		checkmarkCircle.setAttribute("class", "checkmark-circle");
+		checkmarkCircle.setAttribute("cx", "26");
+		checkmarkCircle.setAttribute("cy", "26");
+		checkmarkCircle.setAttribute("r", "25");
+		checkmark.appendChild(checkmarkCircle);
+
+		var checkmarkStem = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		checkmarkStem.setAttribute("class", "checkmark-stem");
+		checkmarkStem.setAttribute("d", "M16 28.8l4.6 4.2 7.6-7");
+		checkmark.appendChild(checkmarkStem);
+
+		var checkmarkKick = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		checkmarkKick.setAttribute("class", "checkmark-kick");
+		checkmarkKick.setAttribute("d", "M30.2 16.6l-4.6 7.2");
+		checkmark.appendChild(checkmarkKick);
+
+		// Ajout des éléments à la fenêtre modale
+		successMessage.appendChild(checkmark);
+		successMessage.appendChild(document.createTextNode("Vous êtes connecté"));
+		modal.appendChild(closeButton);
+		modal.appendChild(successMessage);
+		document.body.appendChild(modal);
+
+		// Affichage de la fenêtre modale
+		modal.showModal();
+	}
+
+	// Fonction appelée pour fermer la fenêtre modale
+	function closeModal() {
+		var modal = document.getElementById("modal");
+		modal.close();
+	}
+    </script>
+</body>
+</html>
+
+
+	

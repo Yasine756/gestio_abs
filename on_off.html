@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Exemple de bouton On/Off</title>
+    <style>
+      body {
+        background-color: white;
+      }
+      .on {
+        background-color: green;
+        color: white;
+      }
+      .off {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemple de bouton On/Off</h1>
+    <button id="toggle">Off</button>
+    <script>
+      var toggleButton = document.getElementById('toggle');
+      var body = document.getElementsByTagName('body')[0];
+
+      toggleButton.addEventListener('click', function() {
+        if (body.classList.contains('off')) {
+          body.classList.remove('off');
+          body.classList.add('on');
+          toggleButton.innerText = 'On';
+        } else {
+            body.classList.remove('on');
+body.classList.add('off');
+toggleButton.innerText = 'Off';
+}
+});
+</script>
+
+  </body>
+</html>
